@@ -131,6 +131,12 @@ Step 1; examples/cv-example.md). cv.md keeps this shape:
      in a date field like every other dated entry, never inside the
      description. In the payload they go in projects[].badge, which both
      templates render as the entry's date column (output/build_payload.mjs).
+2.8  Each award is one line: "- {Category} - {title}, {years}", with the
+     category from the [award category] ("Chess - ...") and the years from
+     the [award years], as "YYYY, YYYY" or a range "YYYY – YYYY". The
+     years are never inside the title. In the payload they go in
+     awards[].year, which both templates render as the date column, like
+     Certifications.
 
 
 ======================================================================
@@ -257,6 +263,8 @@ A.2  Where each concept lives:
      [authored project]     ## Projects.
      [project period]       Dates of the entry under ## Projects, as
                             "Mon YYYY – Mon YYYY".
+     [award category],      The category and years of each entry under
+     [award years]          ## Chess.
      [gaps]                 ## Gaps and missing information.
      [private section]      ## Job search context, ## Gaps and missing
                             information, ## Search state, ## Pending
@@ -302,6 +310,9 @@ B.2  Where each concept lives:
      [period]               experience[].period {start, end}, "YYYY-MM",
                             written in cv.md as "Mon YYYY".
      [project period]       projects[].period {start, end}, "YYYY-MM".
+     [award category]       awards[].category, capitalized (chess -> Chess).
+     [award years]          awards[].years; several awards merged into one
+                            line use the range from the first to the last.
      [decision]             source_differences[].decision. The main
                             sections already hold the decided values.
      [pending confirmation] pending_confirmation[].

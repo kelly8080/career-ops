@@ -328,3 +328,19 @@ Configured in `modes/_profile.md`. Stars rate each posting on location (30%), wo
 ## 2026-11-10: all_info.json no longer ignored
 
 - At Álvaro's request, `output/all_info.json` is no longer ignored by git: `!output/all_info.json` added to `.gitignore` after the `output/*` rule, and the line removed from `.git/info/exclude`. It is not staged or committed. `output/all_info.schema.json` and `output/validate_all_info.mjs` stay ignored.
+
+## 2026-11-10: General one-pager rebuilt again
+
+- Both PDFs were missing from `output/` before this build (removed outside this session). Rebuilt from `output/cv.md` with no content changes: one page each, A4, all 16 keywords, payloads identical. Validator (mirror check) exit 0, title and structure checks passed, `ats-payload.mjs` 0 findings, `verify-ats.mjs` 95/100 (A).
+
+## 2026-11-10: General one-pager rebuilt (third time today)
+
+- Both PDFs were missing from `output/` again before this build. Rebuilt from `output/cv.md` with no content changes: one page each, A4, all 16 keywords, payloads identical. Validator (mirror check) exit 0, title and structure checks passed, `ats-payload.mjs` 0 findings, `verify-ats.mjs` 95/100 (A).
+
+## 2026-11-10: Awards with category prefix and dates in the year field
+
+- `output/cv.md` (and its root copy), Awards & Honors: "- Chess - 2 International Master (IM) norm results, 2012, 2014" and "- Chess - Champion of Córdoba (open) and Andalusia (sub-16 & sub-18), 2009 – 2011". The years moved out of the titles into the year field; the second line merges two archive awards, so it carries their range (2009 – 2011). The archive already held the years in `awards[].years` and the category in `awards[].category`; no archive change.
+- `output/build_payload.mjs`: awards parsed as "{title}, {years}", years into `awards[].year`.
+- `photo-right`: `.award-item` laid out like `.cert-item`, so award years sit in the right-hand date column. `ats-1page` already rendered the year after the title, like certifications.
+- `preprint.rules`: new rule 2.8; [award category] and [award years] mapped in A.2 and B.2.
+- Both one-page PDFs rebuilt: one page each, A4, all 16 keywords, payloads identical. Validator (mirror check) exit 0, title and structure checks passed, `ats-payload.mjs` 0 findings, `verify-ats.mjs` 100/100 (A).
