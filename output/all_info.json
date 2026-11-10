@@ -1,0 +1,2037 @@
+{
+  "$schema": "./all_info.schema.json",
+  "schema_version": "1.2.0",
+  "meta": {
+    "owner": "Álvaro Riobóo de Larriva",
+    "last_updated": "2026-11-10",
+    "purpose": "Archive of every confirmed fact about Álvaro's background. output/cv.md, built from it by preprint.rules, is the curated source for every CV and takes from here only what Álvaro confirms.",
+    "history": [
+      {
+        "date": "2026-11-05",
+        "event": "output/ALL.md created"
+      },
+      {
+        "date": "2026-11-10",
+        "event": "Merged into output/all_info.md; LinkedIn PDF export integrated"
+      },
+      {
+        "date": "2026-11-10",
+        "event": "Converted from output/all_info.md to output/all_info.json (schema 1.0.0)"
+      },
+      {
+        "date": "2026-11-10",
+        "event": "Schema 1.1.0: job_search.availability and job_search.work_authorization added from Álvaro's answers; their gaps closed"
+      },
+      {
+        "date": "2026-11-10",
+        "event": "Schema 1.2.0: projects[].period added; the covid19_dashboard dates moved out of its description"
+      }
+    ],
+    "private_sections": [
+      "job_search",
+      "gaps",
+      "search_snapshot",
+      "pending_confirmation"
+    ],
+    "sources": [
+      {
+        "id": "pdf",
+        "label": "PDF",
+        "description": "documents/CV_arioboo.pdf, his own two-page CV"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "description": "linkedin.com/in/arioboo94: cached English copy read 2026-11-05, public page read 2026-11-10, skills list pasted by Álvaro 2026-11-10"
+      },
+      {
+        "id": "linkedin_pdf",
+        "label": "LinkedIn PDF",
+        "description": "'Save to PDF' export of 2026-11-10 (Spanish-language profile), fully transcribed here and then deleted because it held the phone number and street address"
+      },
+      {
+        "id": "stated",
+        "label": "Stated",
+        "description": "What Álvaro said in chat, with the date"
+      }
+    ]
+  },
+  "identity": {
+    "full_name": "Álvaro Riobóo de Larriva",
+    "headline": "Data Scientist | Astrophysicist",
+    "born_year": 1994,
+    "location": {
+      "city": "Córdoba",
+      "region": "Andalusia",
+      "country": "Spain",
+      "timezone": "Europe/Madrid"
+    }
+  },
+  "contact": {
+    "preferred_email": "riodela.alvaro@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/arioboo94",
+    "github": "https://github.com/arioboo",
+    "website": "https://arioboo.github.io",
+    "unsolicited_calls": false,
+    "other_emails": [
+      {
+        "address": "alvaroinator7@gmail.com",
+        "purpose": "LinkedIn account email, shown in the LinkedIn contact info",
+        "cv_policy": "excluded"
+      },
+      {
+        "address": "arioboo@ucm.es",
+        "purpose": "UCM student email, given as contact on the tutor entry; probably inactive",
+        "cv_policy": "excluded"
+      }
+    ]
+  },
+  "positioning": [
+    {
+      "topic": "summary",
+      "text": "Physicist specialized in computational astrophysics, applying data analysis and machine learning across scientific and industrial projects.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "fields_of_expertise",
+      "text": "Data science, high-end computing and simulations, astrophysics, data analysis.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "trained_in",
+      "text": "Statistical analysis, mathematical modeling, optimization, computing, data structures.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "experienced_in",
+      "text": "Programming languages (Python, R) enabling deep handling, optimization and insights from data.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "looking_to",
+      "text": "Leverage his skills and knowledge to make valuable contributions.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "background",
+      "text": "Mathematics, physics, programming and data science.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "interests",
+      "text": "Artificial intelligence, statistics, physics and programming.",
+      "sources": [
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "topic": "working_style",
+      "text": "Detail-oriented, organized, driven team player, committed to high-quality work; self-confident and kind.",
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "topic": "learning_style",
+      "text": "Self-taught from a young age, applying what he learns.",
+      "sources": [
+        {
+          "source": "linkedin"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "uco",
+      "employer": {
+        "name": "University of Córdoba",
+        "short_name": "UCO"
+      },
+      "role": "Data Scientist Assistant",
+      "department": "KDIS group (Numerical Analysis Department)",
+      "place": {
+        "type": "onsite",
+        "city": "Córdoba",
+        "region": null,
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2022-05",
+        "end": "2022-11"
+      },
+      "employment_type": "full_time",
+      "notes": [],
+      "bullets": [
+        {
+          "text": "Drove data mining and EDA efforts for the MANPREDIC project, providing critical insights for supervised predictive maintenance of Spanish land army truck vehicles.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf",
+              "note": "Spanish profile says 'vehículos logísticos' (logistics vehicles)"
+            }
+          ]
+        },
+        {
+          "text": "Continuously tested model effectiveness metrics over time to optimize predictive accuracy.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf"
+            }
+          ]
+        },
+        {
+          "text": "Leveraged diagnostic techniques to identify opportunities for model upgrades, improving outcomes.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deuser",
+      "employer": {
+        "name": "Deuser Tech Group S.L.",
+        "short_name": null
+      },
+      "role": "Junior Data Scientist",
+      "department": "Software Department",
+      "place": {
+        "type": "onsite",
+        "city": "Córdoba",
+        "region": null,
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2021-06",
+        "end": "2021-08"
+      },
+      "employment_type": "full_time",
+      "notes": [
+        {
+          "text": "Deuser is now part of Indra Group.",
+          "sources": [
+            {
+              "source": "linkedin"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "Used SQL to extract business insights from multiple sources, cleaning data and performing exploratory data analysis in R and Python for the PREDCAM project.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin"
+            }
+          ]
+        },
+        {
+          "text": "Leveraged national and European APIs (IFAPA, MAPA, Copernicus-Land) to feed CNN models with satellite images.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf",
+              "note": "'satellite' comes from this source"
+            }
+          ]
+        },
+        {
+          "text": "Used H2O and PyTorch for image processing and model development.",
+          "sources": [
+            {
+              "source": "linkedin"
+            }
+          ]
+        },
+        {
+          "text": "Regularly used Python and R frameworks, applying unsupervised methods such as PCA, K-Means and DBScan to new problems.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "freelance",
+      "employer": {
+        "name": "Self-employed",
+        "short_name": null
+      },
+      "role": "Freelance Data Scientist",
+      "department": null,
+      "place": {
+        "type": "remote",
+        "city": null,
+        "region": null,
+        "country": null
+      },
+      "period": {
+        "start": "2020-03",
+        "end": "2021-05"
+      },
+      "employment_type": "self_employed",
+      "notes": [
+        {
+          "text": "Work came through the platforms Freelancer, Upwork and Fiverr.",
+          "sources": [
+            {
+              "source": "stated",
+              "date": "2026-11-10"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "Data wrangling, EDA, ML/DL model training and statistical analysis for clients.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        },
+        {
+          "text": "Used Python and R frameworks and unsupervised methods such as PCA, K-Means and DBScan to customize solutions to client needs.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        },
+        {
+          "text": "Leveraged diverse APIs for data mining, economics, georeferencing, web scraping and other tasks.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        },
+        {
+          "text": "Model validation, and specific jobs on clustering, georeferencing and ETL.",
+          "sources": [
+            {
+              "source": "linkedin_pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iac",
+      "employer": {
+        "name": "Canary Islands Institute of Astrophysics",
+        "short_name": "IAC"
+      },
+      "role": "Research Assistant",
+      "department": null,
+      "place": {
+        "type": "onsite",
+        "city": "San Cristóbal de La Laguna",
+        "region": "Tenerife",
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2018-12",
+        "end": "2019-09"
+      },
+      "employment_type": "thesis",
+      "notes": [
+        {
+          "text": "Part of the MSc thesis.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "Developed a CNN encoder-decoder architecture (U-Net) to detect high-density, high-energy-emission starburst clusters in a hydrodynamical simulation of galaxies.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf",
+              "note": "adds 'high-energy emission' and 'of galaxies'"
+            }
+          ]
+        },
+        {
+          "text": "Used Python, data science libraries and ML frameworks such as TensorFlow and Keras to extract information and define the learning model.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        },
+        {
+          "text": "Leveraged astrophysics segmentation software and GPU-related software, including NVIDIA drivers and the CUDA toolkit, to optimize computation.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ucm_tutor",
+      "employer": {
+        "name": "Complutense University of Madrid",
+        "short_name": "UCM"
+      },
+      "role": "Student Tutor",
+      "department": null,
+      "place": {
+        "type": "onsite",
+        "city": "Madrid",
+        "region": null,
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2016-01",
+        "end": "2016-06"
+      },
+      "employment_type": "apprenticeship",
+      "notes": [
+        {
+          "text": "Employment type confirmed as apprenticeship.",
+          "sources": [
+            {
+              "source": "stated",
+              "date": "2026-11-10"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "Collaborated with professors to coach students in Calculus subjects with practical examples, across all first-year groups.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf",
+              "note": "'all first-year groups'"
+            }
+          ]
+        },
+        {
+          "text": "Presented seminars on Mathematica and Maple software, on his own initiative.",
+          "sources": [
+            {
+              "source": "pdf"
+            },
+            {
+              "source": "linkedin_pdf",
+              "note": "'own initiative'"
+            }
+          ]
+        },
+        {
+          "text": "Conveyed technical information to diverse audiences.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "msc_astrophysics",
+      "degree": "MSc in Astrophysics",
+      "institution": {
+        "name": "University of La Laguna",
+        "short_name": "ULL"
+      },
+      "place": {
+        "type": "onsite",
+        "city": "San Cristóbal de La Laguna",
+        "region": "Tenerife",
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2017",
+        "end": "2019"
+      },
+      "status": "completed",
+      "specialty": "Theoretical/Computational Astrophysics",
+      "thesis": {
+        "title": "Galaxy Evolution with Deep Learning",
+        "grade": null,
+        "date": null
+      },
+      "gpa": {
+        "value": 6.98,
+        "scale": 10,
+        "sources": [
+          {
+            "source": "stated",
+            "date": "2026-11-10"
+          }
+        ]
+      },
+      "grades": [],
+      "cv_policy": "allowed",
+      "notes": [],
+      "sources": [
+        {
+          "source": "pdf"
+        },
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "id": "bsc_physics",
+      "degree": "BSc in Physics",
+      "institution": {
+        "name": "Complutense University of Madrid",
+        "short_name": "UCM"
+      },
+      "place": {
+        "type": "onsite",
+        "city": "Madrid",
+        "region": null,
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2012",
+        "end": "2017"
+      },
+      "status": "completed",
+      "specialty": "Fundamental Physics - Astrophysics",
+      "thesis": {
+        "title": "Integral Field Spectroscopy (IFS) in nearby galaxies: gas kinematics",
+        "grade": {
+          "value": 8.5,
+          "scale": 10
+        },
+        "date": "2016-07"
+      },
+      "gpa": {
+        "value": 6.79,
+        "scale": 10,
+        "sources": [
+          {
+            "source": "stated",
+            "date": "2026-11-10"
+          }
+        ]
+      },
+      "grades": [
+        {
+          "subject": "Classical Electrodynamics",
+          "value": 9.9,
+          "scale": 10,
+          "date": "2017-01"
+        },
+        {
+          "subject": "Astrophysics",
+          "value": 9.0,
+          "scale": 10,
+          "date": "2015-02"
+        }
+      ],
+      "cv_policy": "allowed",
+      "notes": [
+        {
+          "text": "End year 2017 confirmed by Álvaro.",
+          "sources": [
+            {
+              "source": "stated",
+              "date": "2026-11-10"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "pdf"
+        },
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "id": "bachillerato",
+      "degree": "Bachillerato",
+      "institution": {
+        "name": "Santa Victoria",
+        "short_name": null
+      },
+      "place": {
+        "type": "onsite",
+        "city": "Córdoba",
+        "region": null,
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2010",
+        "end": "2012"
+      },
+      "status": "completed",
+      "specialty": null,
+      "thesis": null,
+      "gpa": null,
+      "grades": [],
+      "cv_policy": "allowed",
+      "notes": [
+        {
+          "text": "In the CV at Álvaro's request.",
+          "sources": [
+            {
+              "source": "stated",
+              "date": "2026-11-10"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "id": "msc_big_data",
+      "degree": "Big Data & Business Analytics MSc (Data Science specialty)",
+      "institution": {
+        "name": "IMF Business School + University of Nebrija",
+        "short_name": null
+      },
+      "place": {
+        "type": "onsite",
+        "city": "Seville",
+        "region": null,
+        "country": "Spain"
+      },
+      "period": {
+        "start": "2021",
+        "end": null
+      },
+      "status": "incomplete",
+      "specialty": "Data Science",
+      "thesis": null,
+      "gpa": null,
+      "grades": [],
+      "cv_policy": "excluded",
+      "notes": [
+        {
+          "text": "About 30 weeks; left on gaining employment.",
+          "sources": [
+            {
+              "source": "pdf"
+            }
+          ]
+        },
+        {
+          "text": "Kept out of the CV at Álvaro's request, to avoid questions; he considers it lost time career-wise.",
+          "sources": [
+            {
+              "source": "stated",
+              "date": "2026-11-05"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cae",
+      "category": "language",
+      "title": "C1 Advanced (CAE)",
+      "issuer": "Cambridge University Press & Assessment English",
+      "issued": "2022-09",
+      "credential_id": null,
+      "duration_weeks": null,
+      "notes": [],
+      "sources": [
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "id": "coursera_ml",
+      "category": "technical",
+      "title": "Machine Learning",
+      "issuer": "Coursera (Stanford University)",
+      "issued": "2019-08",
+      "credential_id": "SFKBFJ4FKG48",
+      "duration_weeks": 10,
+      "notes": [
+        {
+          "text": "Single course, not a specialization: the credential link is a course verification URL.",
+          "sources": [
+            {
+              "source": "linkedin"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "linkedin"
+        },
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "coursera_dl",
+      "category": "technical",
+      "title": "Deep Learning Specialization",
+      "issuer": "Coursera (deeplearning.ai)",
+      "issued": "2019-11",
+      "credential_id": "3T6LNYJTN9VF",
+      "duration_weeks": 16,
+      "notes": [],
+      "sources": [
+        {
+          "source": "linkedin"
+        },
+        {
+          "source": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "chess_monitor_national",
+      "category": "chess",
+      "title": "Chess Base Monitor, National",
+      "issuer": "FEDA",
+      "issued": "2015",
+      "credential_id": null,
+      "duration_weeks": null,
+      "notes": [
+        {
+          "text": "LinkedIn lists the course as Collado Villalba, Madrid, 2016; Álvaro chose 2015.",
+          "sources": [
+            {
+              "source": "stated",
+              "date": "2026-11-10"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "pdf"
+        },
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "id": "chess_monitor_regional",
+      "category": "chess",
+      "title": "Chess Base Monitor, Regional",
+      "issuer": "FADA",
+      "issued": "2011",
+      "credential_id": null,
+      "duration_weeks": null,
+      "notes": [
+        {
+          "text": "LinkedIn lists the course as Brenes, Seville, 2011.",
+          "sources": [
+            {
+              "source": "linkedin"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "pdf"
+        },
+        {
+          "source": "linkedin"
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "groups": [
+      {
+        "area": "data_and_ml",
+        "items": [
+          {
+            "name": "Machine Learning"
+          },
+          {
+            "name": "Data Science"
+          },
+          {
+            "name": "Data Analysis"
+          },
+          {
+            "name": "Data Wrangling"
+          },
+          {
+            "name": "TensorFlow"
+          },
+          {
+            "name": "Keras"
+          },
+          {
+            "name": "PyTorch"
+          },
+          {
+            "name": "H2O"
+          },
+          {
+            "name": "scikit-learn"
+          },
+          {
+            "name": "pandas",
+            "sources": [
+              {
+                "source": "stated",
+                "date": "2026-11-10"
+              }
+            ]
+          },
+          {
+            "name": "NumPy",
+            "sources": [
+              {
+                "source": "stated",
+                "date": "2026-11-10"
+              }
+            ]
+          },
+          {
+            "name": "Jupyter"
+          },
+          {
+            "name": "Anaconda"
+          }
+        ]
+      },
+      {
+        "area": "methods",
+        "from_experience": true,
+        "items": [
+          {
+            "name": "EDA"
+          },
+          {
+            "name": "Supervised predictive maintenance"
+          },
+          {
+            "name": "CNNs"
+          },
+          {
+            "name": "U-Net"
+          },
+          {
+            "name": "PCA"
+          },
+          {
+            "name": "K-Means"
+          },
+          {
+            "name": "DBScan"
+          },
+          {
+            "name": "Model metric testing"
+          }
+        ]
+      },
+      {
+        "area": "programming",
+        "items": [
+          {
+            "name": "Python"
+          },
+          {
+            "name": "R"
+          },
+          {
+            "name": "SQL"
+          },
+          {
+            "name": "Bash"
+          },
+          {
+            "name": "Fortran"
+          },
+          {
+            "name": "Java"
+          },
+          {
+            "name": "JavaScript"
+          },
+          {
+            "name": "C#"
+          },
+          {
+            "name": "C++"
+          }
+        ]
+      },
+      {
+        "area": "web",
+        "items": [
+          {
+            "name": "PHP"
+          },
+          {
+            "name": "HTML"
+          },
+          {
+            "name": "CSS"
+          }
+        ]
+      },
+      {
+        "area": "scientific_computing",
+        "items": [
+          {
+            "name": "MATLAB",
+            "cv_policy": "needs_example"
+          },
+          {
+            "name": "Mathematica"
+          },
+          {
+            "name": "Maple"
+          },
+          {
+            "name": "GNU Octave"
+          },
+          {
+            "name": "IDL"
+          },
+          {
+            "name": "IRAF"
+          },
+          {
+            "name": "Origin"
+          },
+          {
+            "name": "SciDAVis",
+            "sources": [
+              {
+                "source": "pdf"
+              }
+            ]
+          },
+          {
+            "name": "LaTeX"
+          }
+        ]
+      },
+      {
+        "area": "big_data_and_databases",
+        "items": [
+          {
+            "name": "Hadoop",
+            "cv_policy": "needs_example"
+          },
+          {
+            "name": "MySQL"
+          },
+          {
+            "name": "MongoDB"
+          },
+          {
+            "name": "Cassandra"
+          }
+        ]
+      },
+      {
+        "area": "cloud_and_devops",
+        "items": [
+          {
+            "name": "Google Cloud (GCP)"
+          },
+          {
+            "name": "AWS"
+          },
+          {
+            "name": "AWS Elastic Beanstalk"
+          },
+          {
+            "name": "Docker"
+          },
+          {
+            "name": "Linux (Ubuntu)"
+          }
+        ]
+      },
+      {
+        "area": "gpu",
+        "from_experience": true,
+        "items": [
+          {
+            "name": "NVIDIA drivers"
+          },
+          {
+            "name": "CUDA toolkit"
+          }
+        ]
+      },
+      {
+        "area": "tools",
+        "items": [
+          {
+            "name": "Git"
+          },
+          {
+            "name": "GitHub"
+          },
+          {
+            "name": "Vim"
+          },
+          {
+            "name": "Emacs",
+            "sources": [
+              {
+                "source": "pdf"
+              }
+            ]
+          },
+          {
+            "name": "Texmaker"
+          },
+          {
+            "name": "Microsoft Office (Word, PowerPoint, Excel, OneNote)"
+          },
+          {
+            "name": "OneDrive"
+          },
+          {
+            "name": "Dropbox"
+          },
+          {
+            "name": "Gmail"
+          },
+          {
+            "name": "Windows 10",
+            "sources": [
+              {
+                "source": "pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "area": "domain",
+        "items": [
+          {
+            "name": "Physics"
+          },
+          {
+            "name": "Astrophysics"
+          }
+        ]
+      }
+    ],
+    "default_sources": [
+      {
+        "source": "linkedin",
+        "note": "full list pasted 2026-11-10"
+      }
+    ],
+    "linkedin_assessments": {
+      "passed": [
+        "Machine Learning",
+        "Python",
+        "R",
+        "Bash",
+        "Git",
+        "AWS",
+        "Hadoop",
+        "Microsoft Excel"
+      ],
+      "note": "LinkedIn retired these assessments in 2023; the badges still show on the profile."
+    },
+    "linkedin_endorsements": [
+      {
+        "skill": "Physics",
+        "count": 3
+      },
+      {
+        "skill": "Aprendizaje automático",
+        "count": 2,
+        "note": "Spanish Machine Learning entry"
+      },
+      {
+        "skill": "Python",
+        "count": 2
+      },
+      {
+        "skill": "Matlab",
+        "count": 2
+      },
+      {
+        "skill": "LaTeX",
+        "count": 2
+      },
+      {
+        "skill": "Microsoft Office",
+        "count": 2
+      },
+      {
+        "skill": "Machine Learning",
+        "count": 1
+      },
+      {
+        "skill": "Data Science",
+        "count": 1
+      },
+      {
+        "skill": "Microsoft Excel",
+        "count": 1
+      }
+    ],
+    "linkedin_skill_links": [
+      {
+        "skill": "TensorFlow",
+        "experiences": 4
+      }
+    ]
+  },
+  "languages": [
+    {
+      "language": "Spanish",
+      "level": "native",
+      "linkedin_level": "native_or_bilingual",
+      "certification_id": null
+    },
+    {
+      "language": "English",
+      "level": "full_professional",
+      "linkedin_level": "full_professional",
+      "certification_id": "cae"
+    },
+    {
+      "language": "German",
+      "level": "beginner",
+      "linkedin_level": "limited_working",
+      "certification_id": null
+    },
+    {
+      "language": "French",
+      "level": "beginner",
+      "linkedin_level": "limited_working",
+      "certification_id": null
+    }
+  ],
+  "awards": [
+    {
+      "id": "im_norms",
+      "category": "chess",
+      "title": "2 International Master (IM) norm results",
+      "years": [
+        2012,
+        2014
+      ],
+      "notes": [
+        {
+          "text": "FIDE certificates on LinkedIn, linked from SlideShare.",
+          "sources": [
+            {
+              "source": "linkedin"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source": "pdf"
+        },
+        {
+          "source": "linkedin"
+        }
+      ]
+    },
+    {
+      "id": "cordoba_champion",
+      "category": "chess",
+      "title": "Córdoba Chess Champion (open category), three consecutive titles",
+      "years": [
+        2009,
+        2010,
+        2011
+      ],
+      "notes": [],
+      "sources": [
+        {
+          "source": "pdf"
+        },
+        {
+          "source": "stated",
+          "date": "2026-11-10",
+          "note": "title count"
+        }
+      ]
+    },
+    {
+      "id": "andalusia_champion",
+      "category": "chess",
+      "title": "Andalusian Chess Champion, sub-16 and sub-18",
+      "years": [
+        2009
+      ],
+      "notes": [],
+      "sources": [
+        {
+          "source": "pdf"
+        }
+      ]
+    }
+  ],
+  "chess_league": [
+    {
+      "division": "División de Honor (Spanish Chess League top division)",
+      "role": "Starting player",
+      "club": "C.A. Postal Cordobés",
+      "period": {
+        "start": "2010",
+        "end": "2011"
+      }
+    },
+    {
+      "division": "División de Honor (Spanish Chess League top division)",
+      "role": "Starting player",
+      "club": "C.A. 64 Villalba",
+      "period": {
+        "start": "2012",
+        "end": "2017"
+      }
+    },
+    {
+      "division": "División de Honor (Spanish Chess League top division)",
+      "role": "Starting player",
+      "club": "C.A. Dama El Sauzal",
+      "period": {
+        "start": "2018",
+        "end": "2019"
+      }
+    }
+  ],
+  "chess_league_sources": [
+    {
+      "source": "stated",
+      "date": "2026-11-10",
+      "note": "clubs; Álvaro chose 2019 as the end"
+    }
+  ],
+  "memberships": [
+    {
+      "organization": "Royal Spanish Physics Society",
+      "short_name": "RSEF",
+      "period": {
+        "start": "2016",
+        "end": "2018"
+      },
+      "groups": [
+        "GEAS",
+        "GECD",
+        "GEE",
+        "GEFAE",
+        "GEFAO",
+        "GEFP",
+        "GEFENOL",
+        "GEFT",
+        "GEIC",
+        "GEOCONL",
+        "GELUR"
+      ],
+      "sources": [
+        {
+          "source": "stated",
+          "date": "2026-11-10",
+          "note": "dates"
+        },
+        {
+          "source": "linkedin",
+          "note": "groups"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "covid19_dashboard",
+      "name": "covid19_dashboard",
+      "description": "Dashboard of the COVID-19 evolution in Spain. Python scripts and a Jupyter notebook pull daily case, death, hospital and ICU figures from the Narrativa COVID-19 Tracking API for a date range, build pandas DataFrames, plot the series with matplotlib and produce an interactive Bokeh HTML dashboard (hover tools, date-range slider).",
+      "period": {
+        "start": "2020-09",
+        "end": "2021-02"
+      },
+      "authored_by_candidate": true,
+      "url": "https://github.com/arioboo/covid19_dashboard",
+      "stack": [
+        "Python",
+        "Jupyter",
+        "pandas",
+        "NumPy",
+        "matplotlib",
+        "Bokeh",
+        "REST API (requests)"
+      ],
+      "sources": [
+        {
+          "source": "stated",
+          "date": "2026-11-10",
+          "note": "Project and repo link given by Álvaro; description, stack and dates read from the public GitHub repo (own repo, not a fork; commits Sep 2020 – Feb 2021)."
+        }
+      ]
+    }
+  ],
+  "recommendations": {
+    "total": 4,
+    "visible": [
+      {
+        "author": "Adrián Ángel Moya Moruno",
+        "relationship": null,
+        "summary": "Enjoys discussing science with him, finds he knows data science well and always learns something from him."
+      },
+      {
+        "author": "Jose Manuel de Frutos Porras",
+        "relationship": "University colleague",
+        "summary": "Capable, intelligent, hardworking, creative analytical problem-solver with strong memory and work ethic, friendly and helpful. Says they taught a C++ course together."
+      }
+    ],
+    "sources": [
+      {
+        "source": "linkedin"
+      }
+    ]
+  },
+  "linkedin_profile": {
+    "note": "As published, kept for comparison only, never as facts. Decisions are in source_differences.",
+    "url": "https://www.linkedin.com/in/arioboo94",
+    "followers": 529,
+    "connections": "500+",
+    "twitter_handle": "arl94spejo",
+    "services_listed": [
+      "IT consulting",
+      "project management",
+      "financial consulting",
+      "information management",
+      "database development",
+      "data reporting"
+    ],
+    "services_note": "Project management and financial consulting have no job behind them in any source.",
+    "versions": [
+      {
+        "lang": "es",
+        "source": "linkedin_pdf",
+        "read_on": "2026-11-10",
+        "headline": "Data Scientist freelance | Astrophysicist",
+        "location": "Córdoba, Andalucía, España",
+        "top_skills": [
+          "Análisis de datos",
+          "Machine Learning",
+          "Manipulación de datos"
+        ],
+        "about": "Físico de carrera, especializado en astrofísica computacional. Desempeñando mi labor actualmente en contratos y proyectos de Data Science y Machine Learning de toda índole.\n\nApasionado desde joven y orientado a aprender de manera autodidacta, aplicando los conocimientos a mi vida y a la de los demás.\n\nMe apasiona la inteligencia artificial, la estadística, la física y la programación. Mi enfoque está en aportar el mayor valor posible.\n\nContacto: riodela.alvaro@gmail.com (profesional) -- Por favor, contacten al correo profesional para cualquier asunto. No atiendo llamadas no deseadas.",
+        "positions": [
+          {
+            "experience_id": "uco",
+            "title": "Personal técnico - Proyectos Big Data",
+            "employer": "Universidad de Córdoba",
+            "dates": "May 2022 – Nov 2022 (7 months)",
+            "location": "Córdoba",
+            "employment_type": null
+          },
+          {
+            "experience_id": "deuser",
+            "title": "Programador Junior Dpto. de Software - Data Scientist",
+            "employer": "Deuser",
+            "dates": "Jun 2021 – Aug 2021 (3 months)",
+            "location": "Córdoba",
+            "employment_type": null
+          },
+          {
+            "experience_id": "freelance",
+            "title": "Freelancer (Freelancer, Upwork, Fiverr)",
+            "employer": "Freelancer.com",
+            "dates": "Mar 2020 – Jun 2021 (1 year 4 months)",
+            "location": null,
+            "employment_type": null
+          },
+          {
+            "experience_id": "iac",
+            "title": "Ayudante de investigación",
+            "employer": "Instituto de Astrofísica de Canarias (IAC)",
+            "dates": "2018 – 2019",
+            "location": "San Cristóbal de La Laguna, Santa Cruz de Tenerife",
+            "employment_type": null
+          },
+          {
+            "experience_id": "ucm_tutor",
+            "title": "Tutor de estudiantes",
+            "employer": "Universidad Complutense de Madrid",
+            "dates": "Feb 2016 – Jul 2016 (6 months)",
+            "location": "Madrid",
+            "employment_type": null
+          }
+        ],
+        "education": "Máster, Astrofísica, Universidad de La Laguna (2017 – 2019); Grado, Ciencias físicas, Universidad Complutense de Madrid (2012 – 2016); Bachillerato, Santa Victoria, Córdoba (2010 – 2012). No specialties or thesis titles.",
+        "certifications": [
+          "Programa Especializado - Deep Learning",
+          "C1 Advanced",
+          "Monitor Nacional Base - Ajedrez",
+          "Machine Learning",
+          "Certificate of title result: IM"
+        ],
+        "languages": "Inglés (Full Professional), Alemán (Limited Working), Español (Native or Bilingual), Francés (Limited Working)",
+        "observations": [
+          "'Freelance' in the headline implies current work.",
+          "The freelance description is in the present tense ('Realizo trabajos como autónomo'), which also implies current work.",
+          "The Deuser entry spells H2O as 'H20'.",
+          "Not in the export: recommendations, skills beyond the top three, honors, memberships, volunteering, services. The two hidden recommendations are still unknown."
+        ]
+      },
+      {
+        "lang": "en",
+        "source": "linkedin",
+        "read_on": "2026-11-05",
+        "headline": "Data Scientist | Astrophysicist, enabling Scientific Discoveries through Data Analysis and Machine Learning",
+        "location": null,
+        "top_skills": [],
+        "about": "Physicist by profession, specialized in computational astrophysics. I am currently working on contracts and Data Science and Machine Learning projects of all kinds.\n\nPassionate from a young age and oriented to learn in a self-taught way, applying knowledge to my life and that of others.\n\nI am passionate about artificial intelligence, statistics, physics and programming. My focus is on providing as much value as possible.\n\nContact: LinkedIn or email (riodela.alvaro@gmail.com) - Please reach out to me for the first time using this professional email",
+        "positions": [
+          {
+            "experience_id": "uco",
+            "title": "Technical Staff - Data Science",
+            "employer": "Universidad de Córdoba",
+            "dates": "May 2022 – Nov 2022",
+            "location": null,
+            "employment_type": "full_time"
+          },
+          {
+            "experience_id": "deuser",
+            "title": "Junior Programmer of Software Department - Data Scientist",
+            "employer": "Deuser (Indra Group)",
+            "dates": "Jun 2021 – Aug 2021",
+            "location": null,
+            "employment_type": "full_time"
+          },
+          {
+            "experience_id": "freelance",
+            "title": "Freelancer (Freelancer, Upwork, Fiverr)",
+            "employer": "Freelancer.com",
+            "dates": "Mar 2020 – Jun 2021",
+            "location": null,
+            "employment_type": "self_employed"
+          },
+          {
+            "experience_id": "iac",
+            "title": "Research assistant",
+            "employer": "Instituto de Astrofísica de Canarias (IAC)",
+            "dates": "Jan 2018 – Jan 2019",
+            "location": null,
+            "employment_type": null
+          },
+          {
+            "experience_id": "ucm_tutor",
+            "title": "Student tutor",
+            "employer": "Universidad Complutense de Madrid",
+            "dates": "Feb 2016 – Jul 2016",
+            "location": null,
+            "employment_type": "apprenticeship"
+          }
+        ],
+        "education": null,
+        "certifications": [],
+        "languages": "Spanish (native or bilingual), English (full professional), German (limited working), French (limited working)",
+        "observations": [
+          "The first About sentence is out of date: no work since Nov 2022 (stated 2026-11-05).",
+          "No current position is listed.",
+          "Honors were empty in the cached copy; the FIDE IM norm certificates appear on the public page of 2026-11-10."
+        ]
+      }
+    ]
+  },
+  "job_search": {
+    "visibility": "private",
+    "sources": [
+      {
+        "source": "stated",
+        "date": "2026-11-05"
+      }
+    ],
+    "applied_in": [
+      "config/profile.yml",
+      "modes/_profile.md"
+    ],
+    "years_of_experience": {
+      "value": 1,
+      "quote": "the most is full of activity, but not real work experience"
+    },
+    "target_roles": [
+      "Data Scientist",
+      "Data Analyst",
+      "AI Engineer",
+      "Machine Learning Engineer",
+      "Deep Learning Engineer"
+    ],
+    "seniority": {
+      "primary": "junior",
+      "note": "Mid and senior roles are acceptable when the salary matches."
+    },
+    "compensation": {
+      "min": 30000,
+      "max": 50000,
+      "currency": "EUR",
+      "period": "year",
+      "basis": "gross",
+      "minimum": null,
+      "note": "'To start with'. Replaced an earlier 35,000 – 80,000 EUR."
+    },
+    "relocation": "prefers_not",
+    "preferences": {
+      "location": [
+        "Córdoba, Sevilla, Málaga, Granada",
+        "Rest of Spain",
+        "Switzerland, Ireland, Iceland, USA",
+        "Rest of the world"
+      ],
+      "work_mode": [
+        "Remote or freelance",
+        "Hybrid",
+        "On-site"
+      ],
+      "contract": [
+        "Full-time",
+        "Freelance",
+        "Part-time"
+      ],
+      "sector": [
+        "Aerospace",
+        "Technology and IT",
+        "Consulting, finance, health",
+        "Defense and others",
+        "Insurance"
+      ],
+      "note": "Best first. Weighted in the star system in modes/_profile.md."
+    },
+    "companies_of_interest": [
+      "Accenture",
+      "Indra",
+      "Quantum companies"
+    ],
+    "availability": {
+      "start_within_weeks": {
+        "min": 1,
+        "max": 3
+      },
+      "text": "Available to start within 1 to 3 weeks.",
+      "sources": [
+        {
+          "source": "stated",
+          "date": "2026-11-10"
+        }
+      ]
+    },
+    "work_authorization": {
+      "authorized_in": [
+        "European Union"
+      ],
+      "not_authorized_in": [
+        "Rest of the world"
+      ],
+      "text": "Authorized to work in the European Union. Not yet authorized anywhere else, North America included.",
+      "sources": [
+        {
+          "source": "stated",
+          "date": "2026-11-10"
+        }
+      ]
+    }
+  },
+  "gaps": [
+    {
+      "id": "employment_gap",
+      "topic": "Employment gap",
+      "text": "No work since Nov 2022. Needs a truthful explanation for applications and interviews.",
+      "sources": [
+        {
+          "source": "stated",
+          "date": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "exit_story",
+      "topic": "Exit story",
+      "text": "Why the search is happening now and what links past work to the next role.",
+      "sources": []
+    },
+    {
+      "id": "metrics",
+      "topic": "Metrics",
+      "text": "No measurable result exists for any role.",
+      "sources": []
+    },
+    {
+      "id": "relocation_for_strong_offer",
+      "topic": "Relocation",
+      "text": "Willingness to relocate for a strong offer.",
+      "sources": []
+    },
+    {
+      "id": "documents",
+      "topic": "Documents",
+      "text": "The diplomas/ and references/ folders in documents/ are empty.",
+      "sources": []
+    }
+  ],
+  "search_snapshot": {
+    "visibility": "private",
+    "date": "2026-11-05",
+    "live_state": [
+      "data/pipeline.md",
+      "data/applications.md"
+    ],
+    "pending_postings": 1163,
+    "pending_companies": 602,
+    "evaluated": 0,
+    "provisional_stars": {
+      "5": 0,
+      "4": 190,
+      "3": 973
+    },
+    "pending_in_spain": 47,
+    "removed_postings": {
+      "count": 871,
+      "reason": "Over 3 years of experience or a leadership title"
+    },
+    "applications_sent": 0,
+    "leads_to_confirm_on_employer_sites": [
+      "Accenture",
+      "EY",
+      "BCG X",
+      "Indra",
+      "NTT DATA",
+      "Multiverse Computing"
+    ],
+    "open_items": [
+      "LinkedIn posting 4482626188 still needs its text pasted"
+    ],
+    "artifacts": {
+      "searchable_list": "https://claude.ai/artifact/EwwpztS8B5YToCG6SQYLzo"
+    }
+  },
+  "pending_confirmation": [
+    {
+      "id": "scm_framework",
+      "item": "SCM Framework – Motor de Velos",
+      "claim": "An open-source Python pipeline testing environmental effects on galaxy rotation curves, validated on 175 SPARC galaxies, presented in a LinkedIn post as his work.",
+      "source": "linkedin",
+      "needs": "Confirmation of authorship and the GitHub link."
+    },
+    {
+      "id": "cpp_course",
+      "item": "C++ course taught with Jose Manuel de Frutos",
+      "claim": "Only a third party's recommendation says so.",
+      "source": "linkedin",
+      "needs": "Confirmation, where and when."
+    }
+  ],
+  "source_differences": [
+    {
+      "id": "uco_title",
+      "item": "UCO title",
+      "values": {
+        "pdf": "Data Scientist Assistant",
+        "linkedin_en": "Technical Staff - Data Science",
+        "linkedin_es": "Personal técnico - Proyectos Big Data"
+      },
+      "decision": "Data Scientist Assistant",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "deuser_employer",
+      "item": "Deuser employer",
+      "values": {
+        "pdf": "Deuser Tech Group S.L.",
+        "linkedin_en": "Deuser (Indra Group)",
+        "linkedin_es": "Deuser"
+      },
+      "decision": "Deuser Tech Group S.L.",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "deuser_title",
+      "item": "Deuser title",
+      "values": {
+        "pdf": "Junior Data Scientist",
+        "linkedin_en": "Junior Programmer of Software Department - Data Scientist",
+        "linkedin_es": "Programador Junior Dpto. de Software - Data Scientist"
+      },
+      "decision": "Junior Data Scientist",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "deuser_end",
+      "item": "Deuser end date",
+      "values": {
+        "pdf": "Sep 2021",
+        "linkedin_en": "Aug 2021",
+        "linkedin_es": "Aug 2021"
+      },
+      "decision": "2021-08",
+      "basis": "stated",
+      "date": null
+    },
+    {
+      "id": "deuser_images",
+      "item": "Deuser image type",
+      "values": {
+        "pdf": "images",
+        "linkedin_en": null,
+        "linkedin_es": "satellite images"
+      },
+      "decision": "satellite images",
+      "basis": "linkedin_pdf",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "deuser_tools",
+      "item": "Deuser tools",
+      "values": {
+        "pdf": "R for EDA",
+        "linkedin_en": "R and Python, H2O, PyTorch, PREDCAM",
+        "linkedin_es": null
+      },
+      "decision": "LinkedIn details kept",
+      "basis": "linkedin",
+      "date": null
+    },
+    {
+      "id": "freelance_title",
+      "item": "Freelance title and employer",
+      "values": {
+        "pdf": "Freelancer Data Scientist, Self-employed Freelancer (via Freelancer.com), Cordova",
+        "linkedin_en": "Freelancer (Freelancer, Upwork, Fiverr)",
+        "linkedin_es": "Freelancer (Freelancer, Upwork, Fiverr)"
+      },
+      "decision": "Freelance Data Scientist; employer Self-employed; remote",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "freelance_end",
+      "item": "Freelance end date",
+      "values": {
+        "pdf": "May 2021",
+        "linkedin_en": "Jun 2021",
+        "linkedin_es": "Jun 2021"
+      },
+      "decision": "2021-05",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "iac_dates",
+      "item": "IAC dates",
+      "values": {
+        "pdf": "Dec 2018 – Sep 2019",
+        "linkedin_en": "Jan 2018 – Jan 2019",
+        "linkedin_es": "2018 – 2019"
+      },
+      "decision": "2018-12 to 2019-09",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "ucm_tutor_dates",
+      "item": "UCM tutor dates",
+      "values": {
+        "pdf": "Jan – Jun 2016",
+        "linkedin_en": "Feb – Jul 2016",
+        "linkedin_es": "Feb – Jul 2016"
+      },
+      "decision": "2016-01 to 2016-06",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "ucm_tutor_type",
+      "item": "UCM tutor employment type",
+      "values": {
+        "pdf": null,
+        "linkedin_en": "Apprenticeship",
+        "linkedin_es": null
+      },
+      "decision": "apprenticeship; not shown on the CV",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "bsc_end",
+      "item": "BSc end year",
+      "values": {
+        "pdf": "2017",
+        "linkedin_en": "2016",
+        "linkedin_es": "2016"
+      },
+      "decision": "2017",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "bachillerato",
+      "item": "Bachillerato",
+      "values": {
+        "pdf": null,
+        "linkedin_en": "2010 – 2012",
+        "linkedin_es": "2010 – 2012"
+      },
+      "decision": "In the CV",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "coursera_ml",
+      "item": "Coursera ML course",
+      "values": {
+        "pdf": "Machine Learning Specialization, ~2020",
+        "linkedin_en": "Machine Learning, Aug 2019",
+        "linkedin_es": "Machine Learning"
+      },
+      "decision": "Machine Learning, single course, 2019-08",
+      "basis": "linkedin",
+      "date": null
+    },
+    {
+      "id": "coursera_dl_date",
+      "item": "Coursera DL date",
+      "values": {
+        "pdf": "~2020",
+        "linkedin_en": "Nov 2019",
+        "linkedin_es": null
+      },
+      "decision": "2019-11",
+      "basis": "linkedin",
+      "date": null
+    },
+    {
+      "id": "chess_monitor_year",
+      "item": "National chess monitor year",
+      "values": {
+        "pdf": "2015",
+        "linkedin_en": "2016",
+        "linkedin_es": null
+      },
+      "decision": "2015",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "headline",
+      "item": "Headline",
+      "values": {
+        "pdf": "Data Scientist | Astrophysicist",
+        "linkedin_en": "Data Scientist | Astrophysicist, enabling Scientific Discoveries through Data Analysis and Machine Learning",
+        "linkedin_es": "Data Scientist freelance | Astrophysicist"
+      },
+      "decision": "Data Scientist | Astrophysicist ('freelance' is out of date)",
+      "basis": "pdf",
+      "date": null
+    },
+    {
+      "id": "division_honor_end",
+      "item": "División de Honor end",
+      "values": {
+        "pdf": null,
+        "linkedin_en": "Apr 2022",
+        "linkedin_es": null
+      },
+      "decision": "2019",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "rsef_end",
+      "item": "RSEF membership end",
+      "values": {
+        "pdf": null,
+        "linkedin_en": "present",
+        "linkedin_es": null
+      },
+      "decision": "2018",
+      "basis": "stated",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "german_french_level",
+      "item": "German and French level",
+      "values": {
+        "pdf": "Beginner",
+        "linkedin_en": "Limited working",
+        "linkedin_es": "Limited working"
+      },
+      "decision": "beginner",
+      "basis": "stated",
+      "date": null
+    },
+    {
+      "id": "institution_names",
+      "item": "Institution names",
+      "values": {
+        "pdf": "English",
+        "linkedin_en": "Spanish",
+        "linkedin_es": "Spanish"
+      },
+      "decision": "Standardized English name; short_name (acronym) in Education, not in CV Experience headers (ATS)",
+      "basis": "stated",
+      "date": "2026-11-10"
+    }
+  ],
+  "linkedin_fixes": [
+    {
+      "id": "es_headline",
+      "versions": [
+        "es"
+      ],
+      "fix": "Drop 'freelance' from the headline."
+    },
+    {
+      "id": "about_current_work",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "Remove the About sentence on current contract work."
+    },
+    {
+      "id": "freelance_entry",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "Freelance entry: past-tense description, end date May 2021, title Freelance Data Scientist."
+    },
+    {
+      "id": "uco_deuser_titles",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "UCO and Deuser titles: Data Scientist Assistant, Junior Data Scientist."
+    },
+    {
+      "id": "iac_dates",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "IAC dates Dec 2018 – Sep 2019 (the Spanish version has no months)."
+    },
+    {
+      "id": "ucm_tutor_dates",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "UCM tutor dates Jan – Jun 2016."
+    },
+    {
+      "id": "bsc_end",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "BSc end 2017."
+    },
+    {
+      "id": "chess_rsef_end",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "División de Honor end 2019 and RSEF end 2018."
+    },
+    {
+      "id": "h2o_typo",
+      "versions": [
+        "es"
+      ],
+      "fix": "Deuser: 'H20' → 'H2O'."
+    },
+    {
+      "id": "contact_visibility",
+      "versions": [
+        "en",
+        "es"
+      ],
+      "fix": "Contact info lists the account email alvaroinator7@gmail.com next to the professional one, plus a phone number and a street address. Check who can see each one."
+    }
+  ]
+}

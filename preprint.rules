@@ -1,0 +1,382 @@
+PREPRINT RULES
+From the fact archive to cv.md (output/cv.md), and the one-page cuts
+Owner: Alvaro Rioboo de Larriva
+Created: 2026-11-10 as cv_preprogram_lint.rules; renamed to preprint.rules
+and split into two flows on 2026-11-10.
+
+These rules describe how the agent builds and checks cv.md (output/cv.md,
+rule 0.3) from the fact archive, following the way career-ops works.
+Parts 1 to 3 stop at cv.md. Part 4 holds the house rules for generating
+CVs from it (the one-page cuts); everything else about generating a CV
+(the one-page general CV, tailored CVs and any other version) follows
+the project's rules (modes/pdf.md and its checks) and the agent's own
+judgment, with the house settings in modes/_custom.md. Nothing here
+sends or submits anything.
+
+Layout:
+  PART 1  Common rules, whatever the archive format
+  PART 2  Flow A: cv.md from output/all_info.md (Markdown archive)
+  PART 3  Flow B: cv.md from output/all_info.json (JSON archive)
+  PART 4  After cv.md: generating CVs
+
+Part 1 names archive concepts in [brackets]; Parts 2 and 3 say where each
+one lives in that format.
+
+
+######################################################################
+PART 1. COMMON RULES
+######################################################################
+
+======================================================================
+STAGE 0. SOURCES AND WHAT EACH ONE IS FOR
+======================================================================
+
+0.1  The [archive] holds every confirmed fact, each with its [sources]. It
+     is never rendered directly.
+0.2  Exactly one archive is active at a time:
+     - Today: output/all_info.json, so Flow B (Part 3) applies.
+     - Flow A (Part 2) applies only when output/all_info.md is the archive.
+     - If both files exist, the agent asks Alvaro which one rules and never
+       merges them silently. A change of format is a full conversion,
+       after which the old file is removed.
+0.3  cv.md is the curated source for every CV. In these rules "cv.md" is
+     output/cv.md: the file these rules build from the archive, and the
+     one every CV is generated from. Whatever it says is what every CV can
+     claim.
+0.3b The career-ops scripts and modes read the CV only from the root
+     cv.md (pdf, latex, the fact gate, cv-title-check, verify-cv-structure,
+     jd-skill-gap, doctor), never from output/ or the archive. So the root
+     cv.md is an exact copy of output/cv.md, never edited on its own:
+     - Every change is made in output/cv.md, then copied over the root
+       cv.md in the same step (cp output/cv.md cv.md).
+     - A tool that writes the root cv.md (add, expand) is not used for it;
+       if the root copy ever differs, the agent stops and asks which
+       change is right, makes it in output/cv.md and copies it again.
+     - The Stage 4 check (B.4) fails while the two differ.
+0.4  modes/_profile.md supplies the framing: the cross-cutting advantage
+     ("Physicist with computational astrophysics training who applies data
+     science and machine learning to real-world problems") and the
+     emphasis per archetype.
+0.5  modes/_custom.md supplies the house rules (English only, email first,
+     confirmation before anything moves into cv.md).
+0.6  config/profile.yml supplies identity and contact. Its page budget
+     (cv.max_pages: 1) applies when a CV is generated, not to cv.md.
+0.7  Out of scope for cv.md content (AGENTS.md, Source-of-Truth Boundary):
+     agent memory, other projects, anything not written in the files above,
+     and the LinkedIn profile itself (LinkedIn is a source for the archive,
+     not for cv.md; the archive keeps the published profile for comparison
+     only). A fact Alvaro states in chat goes into the archive first, as a
+     [stated source] with the date, and only then into cv.md.
+
+
+======================================================================
+STAGE 1. SELECT: archive -> cv.md
+======================================================================
+
+1.1  Facts move from the archive into cv.md only after Alvaro confirms each
+     move. cv.md is not limited to one page: fitting a page is done when
+     each CV is generated (Part 4).
+1.2  The agent proposes the move as a list: the fact, where it sits in the
+     archive with its [sources], and where it would go in cv.md. Nothing is
+     written before a yes.
+1.3  NEVER moved into cv.md:
+     - Sensitive information: phone numbers, secondary emails (the account
+       email alvaroinator7@gmail.com, the UCM email), street addresses and
+       any other private contact or personal data. The only contact details
+       in cv.md are the professional email, LinkedIn, GitHub, the website
+       and the city.
+     - Anything in a [private section]: job search conditions
+       (availability, work authorization, compensation, years of
+       experience, preferences), gaps, search state and pending items.
+       They serve evaluations, forms and interviews, never cv.md.
+     - Anything [excluded] (today: the secondary emails and the Big Data &
+       Business Analytics MSc, both at Alvaro's request).
+     - Anything [pending confirmation].
+1.4  Moved only with a concrete example ready: items that [need an
+     example] (today: MATLAB, Hadoop).
+1.5  Where sources disagree, cv.md uses the [decision] for that item. No
+     other value.
+1.6  No metric, scale figure or result is added unless the archive states
+     it. It holds none today (see [gaps]: metrics), so cv.md carries none.
+1.7  "Reformulate, never invent" (AGENTS.md): wording may be shortened,
+     merged or reordered, but every claim must trace to the archive.
+1.8  No claim of authorship of a tool, library or repo unless an [authored
+     project] says so (today only covid19_dashboard).
+
+
+======================================================================
+STAGE 2. STRUCTURE (what the career-ops scripts need)
+======================================================================
+
+The checking scripts find content by heading (AGENTS.md, onboarding
+Step 1; examples/cv-example.md). cv.md keeps this shape:
+
+2.1  "# Full name", then the headline line, then the contact line.
+2.2  Sections, in this order: ## Summary, ## Experience, ## Projects,
+     ## Education, ## Certifications, ## Awards & Honors, ## Skills,
+     ## Keywords.
+2.3  The Experience section is headed exactly "## Experience".
+2.4  Each job is "### Company — Location", then a bold "**Title**" line,
+     then a dates line, then an optional "Department: {department}" line,
+     then the bullets. The Department line is the job's [department] and is
+     left out when the job has none. In the CV payload it becomes
+     experience[].context. The em dash in the job header is required by
+     the parser and is the only em dash allowed in cv.md.
+2.5  Jobs are in reverse chronological order (generate-pdf.mjs refuses a
+     CV whose roles are not newest-first).
+2.6  Skills sit under a heading containing "Skills", one bold category per
+     line: "- **Category:** item, item, item".
+2.7  Each project is one line: "- **[name](url)**, Mon YYYY – Mon YYYY.
+     {Description} with {stack}." The dates are the [project period],
+     in a date field like every other dated entry, never inside the
+     description. In the payload they go in projects[].badge, which both
+     templates render as the entry's date column (output/build_payload.mjs).
+
+
+======================================================================
+STAGE 3. CONTENT
+======================================================================
+
+3.1  English only, never mixed. Institutions use the [standardized English
+     name]. In Education it carries the [acronym] in parentheses
+     ("University of La Laguna (ULL)"); in Experience job headers it does
+     not (rule 3.9). Only proper names stay as they are: places (Córdoba,
+     San Cristóbal de La Laguna), companies (Deuser Tech Group S.L.),
+     schools, and Spanish qualifications with no exact English equivalent.
+3.2  Each cv.md job comes from one [experience entry], in the same order:
+     company = [employer], title = [role] exactly, Department line =
+     [department], location = [place] ("Remote" for remote work), dates =
+     [period]. cv-title-check later holds every tailored CV to these
+     titles. Stage 4 checks this mapping.
+3.3  Dates use "Mon YYYY – Mon YYYY".
+3.4  The contact line starts with the email.
+3.5  The Summary is one short, general paragraph that joins the physicist
+     framing from modes/_profile.md with the AI context ("Physicist and AI
+     practitioner ..."). No project-specific detail (models, projects,
+     employers): that belongs in Experience. It holds no keyword list.
+     Default summary (cv.md always holds this text):
+       "Physicist and AI practitioner specialized in computational
+       astrophysics, applying data analysis and machine learning across
+       scientific and industrial projects. Detail-oriented, organized and
+       driven team player, committed to delivering high-quality work."
+     For a specific posting, the tailored CV starts from the default and
+     changes it only slightly: name the target role, or swap in terms the
+     posting uses that cv.md already backs (for example "predictive
+     modelling" for a Data Scientist role, "deep learning" for a Deep
+     Learning Engineer role). Same length, same structure, no new claims.
+     The change lives in that CV's payload, never in cv.md.
+3.6  The ## Keywords section is last: one comma-separated line of ATS
+     keywords (disciplines and methods, not tools). Each keyword must be
+     backed by an Experience entry, Projects, Education or Certifications
+     in cv.md.
+     In the payload this list is competencies[], with
+     "sections": {"competencies": "Keywords"}. Both templates render it at
+     the end in a soft grey.
+3.7  Skills lists hold concrete tools, libraries and languages, never the
+     disciplines already in the Keywords section. The Data & ML line does
+     not repeat generic terms such as Machine Learning or Data Analysis.
+     Category order: Programming, Data & ML, Databases & Cloud, Languages.
+     Item order inside each line follows rule 3.8.
+3.8  Ordering of Skills and Keywords by target role. Items are only
+     reordered, never added or removed. The exceptions are the one-page
+     cuts in Part 4 (Keywords and Skills), made in the order Part 4 sets:
+     - With a posting: what the posting asks for comes first, in the order
+       of its requirements (jd-skill-gap.mjs `existing` items first), then
+       the rest in the default order. Category order may follow the
+       posting too, Languages always last.
+     - Without a posting, the closest archetype in modes/_profile.md
+       decides; with no archetype stated, the default is Data Scientist.
+     - cv.md itself always holds the default order: Data Scientist
+       (statistics, predictive modelling, EDA, model evaluation first; deep
+       learning and computer vision after; Python, R and SQL first;
+       scikit-learn, pandas and NumPy before PyTorch and TensorFlow).
+     - A tailored CV reorders in its payload, never in cv.md.
+3.9  ATS parsing (ats-payload.mjs lints). In Experience:
+     - The company in "### Company — Location" is only the employer's name:
+       no acronym or other parenthetical, no list of platforms.
+     - The **Title** line is only the job title: no department, group or
+       employer name in it.
+     - The department goes only in the Department line (rule 2.4), never
+       in the title or the bullets.
+     - Other details moved out of the header (such as the freelance
+       platforms) go into a bullet.
+     - Freelance work is listed under "Self-employed".
+3.10 At most three bullets per job; each bullet is one fact, not a list of
+     unrelated ones.
+3.11 No item from rule 1.3.
+
+
+======================================================================
+STAGE 4. CHECK cv.md
+======================================================================
+
+4.1  The agent reads cv.md against every rule in Stages 1 to 3.
+4.2  The archive check of the active flow passes (A.4 or B.4), including
+     the root-copy check (rule 0.3b).
+4.3  node doctor.mjs --json
+     Its warnings must not say the Experience section was not found.
+4.4  If any rule fails, the agent stops, lists the failures and asks before
+     fixing cv.md.
+4.5  When cv.md or the archive changes, the agent adds a dated entry to
+     LOG_ARIOBOO.md.
+
+
+######################################################################
+PART 2. FLOW A: cv.md FROM output/all_info.md
+######################################################################
+
+Applies only when output/all_info.md is the active archive (rule 0.2).
+Not active today.
+
+A.1  Format. A Markdown document with these sections: Identity and
+     contact, Positioning, Experience, Education, Certifications and
+     courses, Skills, Languages, Chess, Memberships, Projects,
+     Recommendations, LinkedIn profile as published, Job search context,
+     Gaps and missing information, Search state, Pending confirmation,
+     Source differences.
+A.2  Where each concept lives:
+     [sources]              Inline tags `PDF`, `LinkedIn`, `LinkedIn PDF`,
+                            `Stated` + date, after the fact they back.
+     [stated source]        `Stated` YYYY-MM-DD.
+     [experience entry]     One row of the table at the top of
+                            ## Experience: Employer | Role | Department |
+                            Place | Dates | Type. The bullets are under
+                            "### {Employer}".
+     [employer], [acronym]  Employer column: "Name (ACRONYM)"; the name
+                            without the parentheses is the employer.
+     [department]           Department column; "-" means none.
+     [role], [place],       Role, Place and Dates columns, dates as
+     [period]               "Mon YYYY – Mon YYYY".
+     [decision]             Decision column of the ## Source differences
+                            table.
+     [pending confirmation] ## Pending confirmation list.
+     [excluded]             Items marked "Kept out of the CV at Alvaro's
+                            request", plus the other emails in Identity.
+     [need an example]      The "Only on LinkedIn, with no project or job
+                            behind them" line under ## Skills.
+     [authored project]     ## Projects.
+     [project period]       Dates of the entry under ## Projects, as
+                            "Mon YYYY – Mon YYYY".
+     [gaps]                 ## Gaps and missing information.
+     [private section]      ## Job search context, ## Gaps and missing
+                            information, ## Search state, ## Pending
+                            confirmation.
+A.3  Writing. New facts go into the right section with their tag; a
+     disagreement between sources becomes a row in ## Source differences.
+     Missing values are written "-".
+A.4  Check. There is no validator for this format. The agent compares each
+     cv.md job with its Experience table row by hand (employer, role,
+     Department line, dates) and lists any mismatch, then checks that the
+     root cv.md is an exact copy (cmp output/cv.md cv.md, rule 0.3b).
+
+
+######################################################################
+PART 3. FLOW B: cv.md FROM output/all_info.json
+######################################################################
+
+Active today (rule 0.2).
+
+B.1  Format. output/all_info.json, with its structure fixed by
+     output/all_info.schema.json (JSON Schema draft 2020-12,
+     schema_version 1.2.0). Conventions:
+     - Keys and enum values in snake_case (full_time, self_employed).
+     - Dates are "YYYY", "YYYY-MM" or "YYYY-MM-DD"; periods are
+       {"start", "end"}.
+     - A missing value is null, never "-", "—", "N/A" or "".
+     - Every fact is {"text", "sources"}; a source is {"source": pdf |
+       linkedin | linkedin_pdf | stated, "date"?, "note"?}.
+     - cv_policy on an item: allowed | excluded | needs_example.
+     - Every list entry that others refer to has a unique snake_case id.
+     - Private sections are listed in meta.private_sections.
+B.2  Where each concept lives:
+     [sources]              "sources" array on each fact or entry.
+     [stated source]        {"source": "stated", "date": "YYYY-MM-DD"}.
+     [experience entry]     experience[] (newest first); bullets in
+                            experience[].bullets.
+     [employer], [acronym]  experience[].employer.name / .short_name
+                            (education: institution.name / .short_name).
+     [department]           experience[].department; null means none.
+     [role]                 experience[].role.
+     [place]                experience[].place {type, city, region,
+                            country}; type "remote" -> "Remote".
+     [period]               experience[].period {start, end}, "YYYY-MM",
+                            written in cv.md as "Mon YYYY".
+     [project period]       projects[].period {start, end}, "YYYY-MM".
+     [decision]             source_differences[].decision. The main
+                            sections already hold the decided values.
+     [pending confirmation] pending_confirmation[].
+     [excluded]             cv_policy: "excluded".
+     [need an example]      cv_policy: "needs_example".
+     [authored project]     projects[] with authored_by_candidate: true.
+     [gaps]                 gaps[].
+     [private section]      Every section listed in meta.private_sections
+                            (today job_search, gaps, search_snapshot,
+                            pending_confirmation).
+B.3  Writing. Every change follows the schema: no unknown keys, no
+     placeholders, sources on every fact. A disagreement between sources
+     becomes a source_differences[] entry. A new kind of data needs a
+     schema change first (bump schema_version).
+B.4  Check.
+     node output/validate_all_info.mjs --cv output/cv.md --mirror cv.md
+     Run after every change to all_info.json or cv.md. It checks the JSON
+     against the schema (types, enums, date formats, unknown keys, ids,
+     cross-references, placeholders), that each cv.md job matches its
+     experience entry (employer, role, Department line, dates), that each
+     cv.md project carries its [project period], and that
+     the root cv.md is an exact copy of output/cv.md (rule 0.3b). It must
+     exit 0.
+
+
+######################################################################
+PART 4. AFTER cv.md: GENERATING CVs
+######################################################################
+
+- Every CV is generated from cv.md (output/cv.md, rule 0.3), following
+  the project's rules (modes/pdf.md and its checks) and the agent's own
+  judgment. The payload is built from output/cv.md, with every keyword,
+  by node output/build_payload.mjs output/cv.md <payload.json>; the cuts
+  and the ordering below are applied to that payload. The checks that
+  read the root cv.md see the same text, because it is an exact copy
+  (rule 0.3b). The house
+  settings (file names, templates, photo, contact order) are in
+  modes/_custom.md.
+- Each generated CV selects and orders what cv.md says. The only
+  rewording allowed is the tailored summary (rule 3.5) and the ask-first
+  shortening below. Skills and Keywords are ordered for the target
+  posting by rule 3.8 (default: Data Scientist). It never adds a claim
+  cv.md does not hold, and never edits cv.md to make a page fit.
+- A one-page CV is made to fit only by the cuts below, in their order:
+  first the Keywords cut, then the ask-first list.
+- For the one-page CV, if a render runs past one page, the agent first
+  shortens the Keywords section of that CV, without asking, one keyword
+  at a time until the CV fits on one page:
+     1. First the generic keywords, those that name general
+        data-handling methods, as opposed to modelling or analysis methods
+        (today: Data Wrangling, ETL, Data Mining), from the end of the
+        list. A generic keyword the posting asks for is not generic for
+        that CV.
+     2. Then the rest, from the end of the list (the least relevant, by
+        rule 3.8).
+  If it still does not fit, it removes the section. It says which
+  keywords were dropped, or that the section was removed. The styled
+  and ATS copies come from the same payload, so a cut needed by either
+  one applies to both: they always carry the same keywords. cv.md
+  keeps the full list.
+- If the CV still runs past one page without Keywords, the agent proposes
+  further cuts for that CV only, in this order, and asks before applying
+  them:
+     a. Third bullet of any job.
+     b. Skills categories least relevant to the target roles, never
+        Languages.
+     c. Projects section.
+     d. The second line of Awards & Honors.
+     e. The UCM Student Tutor entry.
+  Shortening or rewording a line to save space is also an ask-first cut.
+  The agent may propose it at any point of this list, never before the
+  Keywords cut.
+- Facts flow one way: archive -> cv.md -> CVs. A wrong fact or wording
+  found in a generated CV is corrected in the archive (if it is a fact)
+  and in cv.md, never only in the payload, HTML or PDF. The one exception
+  is the wording of a tailored summary (rule 3.5), which lives only in
+  that CV's payload and is corrected there; a wrong fact in it is still
+  corrected in the archive and cv.md.

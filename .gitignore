@@ -35,6 +35,8 @@ reports/**/*.md
 !/output/
 output/*
 !output/.gitkeep
+# Local: the fact archive is tracked on this branch (Álvaro's choice, 2026-11-10).
+!output/all_info.json
 # batch/ holds generated worker output. Ignore the directory and allowlist the
 # tracked scaffolding, so a filename a future generator picks is covered by
 # default. AGENTS.md already states the intent this way: "Batch in batch/
